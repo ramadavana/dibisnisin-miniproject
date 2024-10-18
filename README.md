@@ -18,3 +18,6 @@ npm run dev
 ```
 
 Open it in localhost (CTRL + Click on the localhost link available on command output)
+
+#Thanks to
+https://reqres.in and https://github.com/muhsinSutanto as my mentor for completing this mini project.
