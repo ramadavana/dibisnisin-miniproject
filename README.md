@@ -16,3 +16,5 @@ Then
 ```bash
 npm run dev
 ```
+
+Open it in localhost (CTRL + Click on the localhost link available on command output)
