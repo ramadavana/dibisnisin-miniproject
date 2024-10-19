@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, MobileNav } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function NavbarDefault() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -66,13 +67,13 @@ export default function NavbarDefault() {
           <ul className="flex flex-wrap items-center justify-center gap-8">
             {navList.map((item, index) => (
               <li key={index}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="flex items-center gap-x-2 text-[#f2f2f2] active:text-[#F96D00] focus:text-[#F96D00] transition-all duration-300 hover:text-[#F96D00]">
                   <span className="flex items-center">{item.icon}</span>
 
                   <span>{item.name}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -91,17 +92,17 @@ export default function NavbarDefault() {
           </div>
         ) : (
           <div className="items-center hidden gap-x-4 lg:flex">
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="px-4 align-middle rounded-md text-[#f2f2f2] bg-transparent border-2 border-[#f2f2f2] hover:bg-[#f2f2f2] hover:text-[#393E46] text-center py-1 transition-all duration-300 uppercase text-xs font-bold">
               Log In
-            </a>
+            </Link>
 
-            <a
-              href="/register"
+            <Link
+              to="/register"
               className="px-4 align-middle rounded-md text-[#393E46] hover:bg-[#F96D00] border-2 border-[#f2f2f2] bg-[#f2f2f2] hover:text-[#f2f2f2] text-center py-1 transition-all duration-300 uppercase text-xs font-bold">
               Register
-            </a>
+            </Link>
           </div>
         )}
 
@@ -121,28 +122,28 @@ export default function NavbarDefault() {
       <MobileNav open={openNav}>
         <div className="container mx-auto">
           {navList.map(({ name, href, icon }) => (
-            <a
-              href={href}
+            <Link
+              to={href}
               key={name}
               className="flex items-center gap-x-2 py-2 text-[#f2f2f2] border-b-2 border-[#f2f2f2] hover:text-[#F96D00] hover:border-[#F96D00] transition-all duration-300">
               {icon}
               <span>{name}</span>
-            </a>
+            </Link>
           ))}
 
           {!isAuthenticated ? (
             <div className="flex items-center mt-8 mb-4 gap-x-4">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="w-full rounded-md text-[#f2f2f2] bg-transparent border-2 border-[#f2f2f2] hover:bg-[#f2f2f2] hover:text-[#393E46] text-center py-1 transition-all duration-300 uppercase text-sm font-bold">
                 Log In
-              </a>
+              </Link>
 
-              <a
-                href="/register"
+              <Link
+                to="/register"
                 className="w-full rounded-md text-[#393E46] hover:bg-[#F96D00] border-2 border-[#f2f2f2] bg-[#f2f2f2] hover:text-[#f2f2f2] text-center py-1 transition-all duration-300 uppercase text-sm font-bold">
                 Register
-              </a>
+              </Link>
             </div>
           ) : (
             <div className="flex items-center mt-4 mb-2 gap-x-4">
