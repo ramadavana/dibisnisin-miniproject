@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import BreadcrumbsDefault from "../../components/Breadcrumb";
+import { Link } from "react-router-dom";
 
 export default function UserListPage() {
   const [users, setUsers] = useState([]);
@@ -81,11 +82,11 @@ export default function UserListPage() {
                   {user.first_name} {user.last_name}
                 </p>
 
-                <a href={`/user-list/user-detail/${user.id}`}>
+                <Link to={`/user-list/user-detail/${user.id}`}>
                   <button className="px-2 py-1 border-2 border-[#f2f2f2] bg-[#f2f2f2] text-[#222831] uppercase rounded-lg hover:bg-[#f96d00] hover:text-[#f2f2f2] transition-all duration-300">
                     User Detail
                   </button>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
